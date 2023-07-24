@@ -92,11 +92,6 @@ if st.button('Load news'):
 
     news['Headline'] = news.apply(lambda row: f'<a href="{row["Link"]}" target="_blank">&#128279;</a> {row["Headline"]}', axis=1)
     newsq['Headline'] = newsq.apply(lambda row: f'<a href="{row["Link"]}" target="_blank">&#128279;</a> {row["Headline"]}', axis=1)
-
-    # st.table(news)
-    # st.subheader('News query')
-    # st.table(newsq)
-
     st.subheader(stock + ' query')
     st.write(news.drop(columns=['Link']).to_html(escape=False, index=False), unsafe_allow_html=True)
     st.write('')
